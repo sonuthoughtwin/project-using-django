@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/adminapp/css/style.css" />
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="#default" class="logo"><img src="../static/adminapp/img/logo1.png" height="50px" width="150x"></a>
+            <div class="header-right">
+              <a class="active" href="index">Home</a>
+              
+              <a  href="#contact">Contact</a>
+              <a  href="#about">About</a>
+            </div>
+          </div>
+
+    </header>
+    <hr>
+    <section>
+        
+        <form method="POST" enctype="multipart/form-data" action="reg">
+            
+            {% csrf_token %}
+            
+            {{ form.as_p }}
+            
+            <input type="submit" name="btnsubmit" value="Register" />
+        </form>
+
+    </section>
