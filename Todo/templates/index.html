@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Todo</title>
+  {% load static %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+   <style type="text/css" ></style>
+</head>
+<body>
+<div django-app="TaskManager">        
+    <div class="container">
+            <div class="content">
+            <h1>Todo</h1>
+            <p class="tagline">task app</p>
+            <form action="" method="post">
+                {% csrf_token %} <!-- csrf token for basic security -->
+                <div class="inputContainer">
+                    <input type="text" class="taskName" placeholder="What do you need to do?" name="title"  required>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="taskName" placeholder="add some text" name="txtcontent" required>
+                </div>
+                <div class="inputContainer half last right">
+                    <input type="date" class="taskDate" name="txtdate" placeholder="select date">   
+                </div>
+                <br>
+                <div class="row">
+                    <button class="taskAdd" name="taskAdd" type="submit"><i class="fa fa-plus icon"></i>Add task</button>
+                </div>
+                </form>
+ </div><!-- container -->
+</div>
+{{res}}
+<hr>
+<a href="show_task">View task Details Here</a>
+<hr>
+</body>
+</html>

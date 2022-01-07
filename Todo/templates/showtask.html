@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+    </style>
+</head>
+<body>
+    <a href="index">home</a>
+    <center>
+       <p>Task List</p> 
+    <table border="1">
+        <tr>
+            <th>Task id</th><th>Ttitle</th><th>content</th><th>Date</th><th>Action</th>
+        </tr>
+        {% for i in key %}
+        <tr>
+        <td>{{i.id}}</td><td>{{i.task_title }}</td><td>{{ i.task_content }}</td><td>{{ i.created_date }}</td>
+        <td><a href="find_task?q={{i.id}}">Edit</a></td><td><a href="{% url 'delete_task' i.id %}">Delete</a></td>
+        </tr>
+    
+    {% endfor %}
+    </table>
+    </center>
+   
+</body>
+</html>

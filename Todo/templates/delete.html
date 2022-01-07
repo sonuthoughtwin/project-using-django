@@ -1,0 +1,8 @@
+<form method="post" action="">
+    {% csrf_token %}
+      <h1>Are you sure you want to delete?{{res}}</h1><br>
+      <input class="btn btn-danger" type="submit" value="Yes" />
+      <a href="/show_task">
+        <br>
+      <div class="btn btn-primary">Cancel</div></a>
+ </form>
